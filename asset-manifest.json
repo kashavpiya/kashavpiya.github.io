@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.78c81d1b.css",
+    "main.js": "/static/js/main.dfbc8134.js",
+    "static/media/gooselake.png": "/static/media/gooselake.016020e0e74070c92064.png",
+    "static/media/me.png": "/static/media/me.afc9af8ac8dec2c4a7e4.png",
+    "static/media/chosen-star.jpg": "/static/media/chosen-star.ee6741ffd80bb88778f7.jpg",
+    "static/media/profile.jpg": "/static/media/profile.bb27cc30c18fc8de8452.jpg",
+    "static/media/mavs.png": "/static/media/mavs.fc3e92ed20edabb354cb.png",
+    "static/media/car-project.png": "/static/media/car-project.e2e7b057727dec6e6cf8.png",
+    "static/media/Resume1022.pdf": "/static/media/Resume1022.60463d663294dfbb5ce1.pdf",
+    "static/media/sorting-project.png": "/static/media/sorting-project.5d1c6c74b072c34fcd9d.png",
+    "index.html": "/index.html",
+    "main.78c81d1b.css.map": "/static/css/main.78c81d1b.css.map",
+    "main.dfbc8134.js.map": "/static/js/main.dfbc8134.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78c81d1b.css",
+    "static/js/main.dfbc8134.js"
+  ]
+}
