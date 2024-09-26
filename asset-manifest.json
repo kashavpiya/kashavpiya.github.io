@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.65944753.css",
-    "main.js": "/static/js/main.d99e10da.js",
+    "main.js": "/static/js/main.407e682b.js",
     "static/media/gooselake.png": "/static/media/gooselake.016020e0e74070c92064.png",
     "static/media/me.png": "/static/media/me.afc9af8ac8dec2c4a7e4.png",
     "static/media/chosen-star.jpg": "/static/media/chosen-star.ee6741ffd80bb88778f7.jpg",
@@ -12,14 +12,15 @@
     "static/media/alexa.jpg": "/static/media/alexa.ade37f92a8c36b565259.jpg",
     "static/media/ps.jpg": "/static/media/ps.673c5a093889296ab8a2.jpg",
     "static/media/bg-texture.png": "/static/media/bg-texture.be1e740bddfe17afe08c.png",
+    "static/media/wateroo.png": "/static/media/wateroo.8e565a6f498c8e3ae407.png",
     "static/media/psLogo.jpg": "/static/media/psLogo.f49716a4c30d4c65d0a9.jpg",
     "static/media/sorting-project.png": "/static/media/sorting-project.5d1c6c74b072c34fcd9d.png",
     "index.html": "/index.html",
     "main.65944753.css.map": "/static/css/main.65944753.css.map",
-    "main.d99e10da.js.map": "/static/js/main.d99e10da.js.map"
+    "main.407e682b.js.map": "/static/js/main.407e682b.js.map"
   },
   "entrypoints": [
     "static/css/main.65944753.css",
-    "static/js/main.d99e10da.js"
+    "static/js/main.407e682b.js"
   ]
 }
