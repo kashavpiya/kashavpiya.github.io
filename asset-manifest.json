@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.65944753.css",
-    "main.js": "/static/js/main.aefbb86a.js",
+    "main.js": "/static/js/main.639cff9d.js",
     "static/media/gooselake.png": "/static/media/gooselake.016020e0e74070c92064.png",
     "static/media/me.png": "/static/media/me.afc9af8ac8dec2c4a7e4.png",
     "static/media/chosen-star.jpg": "/static/media/chosen-star.ee6741ffd80bb88778f7.jpg",
     "static/media/profile.jpg": "/static/media/profile.bb27cc30c18fc8de8452.jpg",
     "static/media/Resume.pdf": "/static/media/Resume.7bcb4bae5568661cd474.pdf",
     "static/media/mavs.png": "/static/media/mavs.fc3e92ed20edabb354cb.png",
+    "static/media/waterooMock.jpg": "/static/media/waterooMock.91bc2972bf28b3a880f9.jpg",
     "static/media/car-project.png": "/static/media/car-project.e2e7b057727dec6e6cf8.png",
     "static/media/alexa.jpg": "/static/media/alexa.ade37f92a8c36b565259.jpg",
     "static/media/f1.png": "/static/media/f1.b1f63c9327c3b1b3158d.png",
@@ -18,10 +19,10 @@
     "static/media/sorting-project.png": "/static/media/sorting-project.5d1c6c74b072c34fcd9d.png",
     "index.html": "/index.html",
     "main.65944753.css.map": "/static/css/main.65944753.css.map",
-    "main.aefbb86a.js.map": "/static/js/main.aefbb86a.js.map"
+    "main.639cff9d.js.map": "/static/js/main.639cff9d.js.map"
   },
   "entrypoints": [
     "static/css/main.65944753.css",
-    "static/js/main.aefbb86a.js"
+    "static/js/main.639cff9d.js"
   ]
 }
