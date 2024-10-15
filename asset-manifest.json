@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.65944753.css",
-    "main.js": "/static/js/main.639cff9d.js",
+    "main.js": "/static/js/main.59878972.js",
     "static/media/gooselake.png": "/static/media/gooselake.016020e0e74070c92064.png",
     "static/media/me.png": "/static/media/me.afc9af8ac8dec2c4a7e4.png",
     "static/media/chosen-star.jpg": "/static/media/chosen-star.ee6741ffd80bb88778f7.jpg",
@@ -19,10 +19,10 @@
     "static/media/sorting-project.png": "/static/media/sorting-project.5d1c6c74b072c34fcd9d.png",
     "index.html": "/index.html",
     "main.65944753.css.map": "/static/css/main.65944753.css.map",
-    "main.639cff9d.js.map": "/static/js/main.639cff9d.js.map"
+    "main.59878972.js.map": "/static/js/main.59878972.js.map"
   },
   "entrypoints": [
     "static/css/main.65944753.css",
-    "static/js/main.639cff9d.js"
+    "static/js/main.59878972.js"
   ]
 }
