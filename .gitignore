@@ -2,14 +2,15 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
 # testing
 /coverage
 
-# production
-/build
+# Vite build output
+/dist
+
+# Vite local env files
+.env.*.local
 
 # misc
 .DS_Store
