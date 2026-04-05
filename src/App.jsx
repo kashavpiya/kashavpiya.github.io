@@ -3,8 +3,13 @@ import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
 import Skills from './components/Skills.jsx'
 import Research from './components/Research.jsx'
+import Projects from './components/Projects.jsx'
 
-const Divider = () => <div className="max-w-5xl mx-auto px-8"><div className="h-px bg-gray-100" /></div>
+const Divider = () => (
+  <div className="max-w-5xl mx-auto px-8">
+    <div className="h-px bg-gray-100" />
+  </div>
+)
 
 export default function App() {
   return (
@@ -17,6 +22,8 @@ export default function App() {
       <Skills />
       <Divider />
       <Research />
+      <Divider />
+      <Projects />
     </div>
   )
 }
