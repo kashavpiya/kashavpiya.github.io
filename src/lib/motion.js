@@ -28,6 +28,12 @@ export const cardItem = {
   },
 }
 
+/** Arrow shift on paper card hover */
+export const paperArrow = {
+  rest: { x: 0, y: 0 },
+  hover: { x: 2, y: -2, transition: { duration: 0.2 } },
+}
+
 /** Green underline draw (scaleX 0→1). Set style={{ originX: 0 }} on the motion element. */
 export const underlineDraw = {
   hidden: { scaleX: 0, originX: 0 },

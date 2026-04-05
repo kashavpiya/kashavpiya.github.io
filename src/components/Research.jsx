@@ -35,7 +35,7 @@ export default function Research() {
         <motion.h2 variants={fadeUp} className="text-5xl font-extrabold tracking-[-0.03em] leading-tight mb-3">
           Published work
         </motion.h2>
-        <motion.div variants={underlineDraw} className="h-0.5 w-16 bg-green-600 mb-4" />
+        <motion.div variants={underlineDraw} style={{ originX: 0 }} className="h-0.5 w-16 bg-green-600 mb-4" />
         <motion.p variants={fadeUp} className="text-gray-500 text-base mb-14 max-w-lg">
           First-author publications in IEEE and arXiv covering AI bias and IoT systems.
         </motion.p>
@@ -48,16 +48,14 @@ export default function Research() {
               target="_blank"
               rel="noopener noreferrer"
               variants={cardItem}
+              initial={{ borderColor: '#e5e7eb' }}
               whileHover={{ y: -4, borderColor: '#16a34a' }}
-              className="relative block border border-gray-200 rounded-xl p-8 transition-shadow hover:shadow-[0_12px_40px_rgba(22,163,74,0.1)] no-underline"
+              className="group relative block border border-gray-200 rounded-xl p-8 transition-shadow hover:shadow-[0_12px_40px_rgba(22,163,74,0.1)] no-underline"
             >
               {/* Arrow */}
-              <motion.span
-                whileHover={{ x: 2, y: -2 }}
-                className="absolute top-8 right-8 text-gray-300 text-lg"
-              >
+              <span className="absolute top-8 right-8 text-gray-300 text-lg transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-green-600">
                 ↗
-              </motion.span>
+              </span>
 
               {/* Venue tag */}
               <span className="inline-block text-[10px] font-bold tracking-[0.15em] uppercase text-green-600 bg-green-50 px-2.5 py-1 rounded mb-4">

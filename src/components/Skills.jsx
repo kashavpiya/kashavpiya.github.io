@@ -49,7 +49,7 @@ export default function Skills() {
         <motion.h2 variants={fadeUp} className="text-5xl font-extrabold tracking-[-0.03em] leading-tight mb-3">
           What I build with
         </motion.h2>
-        <motion.div variants={underlineDraw} className="h-0.5 w-16 bg-green-600 mb-4" />
+        <motion.div variants={underlineDraw} style={{ originX: 0 }} className="h-0.5 w-16 bg-green-600 mb-4" />
         <motion.p variants={fadeUp} className="text-gray-500 text-base mb-14 max-w-lg">
           Day-to-day tools at the intersection of AI engineering and automation.
         </motion.p>
@@ -62,6 +62,7 @@ export default function Skills() {
             <motion.div
               key={name}
               variants={cardItem}
+              initial={{ borderColor: '#e5e7eb' }}
               whileHover={{ y: -4, borderColor: '#16a34a' }}
               className="border border-gray-200 rounded-xl p-6 cursor-default transition-shadow hover:shadow-[0_8px_24px_rgba(22,163,74,0.08)]"
             >
