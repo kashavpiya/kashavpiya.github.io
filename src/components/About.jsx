@@ -28,7 +28,7 @@ export default function About() {
             </motion.h2>
 
             {/* Green underline */}
-            <motion.div variants={underlineDraw} className="h-0.5 w-16 bg-green-600 mb-12" />
+            <motion.div variants={underlineDraw} style={{ originX: 0 }} className="h-0.5 w-16 bg-green-600 mb-12" />
 
             <div className="flex gap-16">
               {stats.map(({ num, label }) => (
