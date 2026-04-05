@@ -5,6 +5,7 @@ import Skills from './components/Skills.jsx'
 import Research from './components/Research.jsx'
 import Projects from './components/Projects.jsx'
 import Contact from './components/Contact.jsx'
+import Footer from './components/Footer.jsx'
 
 const Divider = () => (
   <div className="max-w-5xl mx-auto px-8">
@@ -27,6 +28,7 @@ export default function App() {
       <Projects />
       <Divider />
       <Contact />
+      <Footer />
     </div>
   )
 }
