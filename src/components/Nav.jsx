@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const links = [
   { label: 'About', href: '#about' },
@@ -11,18 +11,28 @@ const links = [
 export default function Nav() {
   const [active, setActive] = useState('')
   const [scrolled, setScrolled] = useState(false)
+  const sectionEls = useRef([])
+  const rafId = useRef(null)
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20)
+    sectionEls.current = links.map(l => document.querySelector(l.href))
 
-      const sections = links.map(l => document.querySelector(l.href))
-      const current = sections.findLast(el => el && el.getBoundingClientRect().top <= 120)
-      setActive(current ? '#' + current.id : '')
+    const onScroll = () => {
+      cancelAnimationFrame(rafId.current)
+      rafId.current = requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 20)
+        const current = sectionEls.current.findLast(
+          el => el && el.getBoundingClientRect().top <= 120
+        )
+        setActive(current ? '#' + current.id : '')
+      })
     }
 
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(rafId.current)
+    }
   }, [])
 
   return (
