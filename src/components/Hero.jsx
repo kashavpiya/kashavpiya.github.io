@@ -4,7 +4,7 @@ import { useTypewriter } from '../hooks/useTypewriter.js'
 export default function Hero() {
   const { displayed, done } = useTypewriter('AI Associate at Walker Advertising', {
     delay: 45,
-    startDelay: 700,
+    startDelay: 1000,
   })
 
   return (
@@ -40,7 +40,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
           className="flex gap-4 items-center"
         >
           <a
