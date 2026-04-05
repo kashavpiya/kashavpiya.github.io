@@ -184,7 +184,7 @@ Each component is self-contained. No shared global CSS beyond Tailwind's base la
 
 ## Open Items
 
-- **LinkedIn URL** — footer and contact section link to LinkedIn; need the actual profile URL before implementation
+- **LinkedIn URL** — https://www.linkedin.com/in/kashavpiya/ ✓
 - **Profile photo** — `profile.jpg` exists in assets; will be used in the About section if desired, otherwise stats-only layout
 
 ---
