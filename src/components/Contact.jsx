@@ -82,6 +82,7 @@ export default function Contact() {
               type="text"
               name="name"
               placeholder="Your name"
+              aria-label="Your name"
               required
               className="px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:bg-white focus:border-green-600 outline-none transition-colors font-sans"
             />
@@ -89,12 +90,14 @@ export default function Contact() {
               type="email"
               name="email"
               placeholder="Your email"
+              aria-label="Your email"
               required
               className="px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:bg-white focus:border-green-600 outline-none transition-colors font-sans"
             />
             <textarea
               name="msg"
               placeholder="Your message"
+              aria-label="Your message"
               rows={5}
               required
               className="px-4 py-3 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:bg-white focus:border-green-600 outline-none transition-colors resize-none font-sans"
