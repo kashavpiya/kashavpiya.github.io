@@ -26,7 +26,7 @@ export default function Artifacts() {
             AI-powered experiences built on top of my professional background.
           </motion.p>
 
-          <motion.div variants={stagger} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <motion.div variants={stagger} className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
             <motion.div
               variants={cardItem}
               whileHover={{ y: -4 }}
@@ -49,6 +49,29 @@ export default function Artifacts() {
                 >
                   Open Chat →
                 </Link>
+              </div>
+            </motion.div>
+
+            {/* How it was built */}
+            <motion.div variants={cardItem} className="flex flex-col gap-5 py-2">
+              <div>
+                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-green-600 mb-2">How it works</p>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  Built with an n8n AI agent pipeline powered by Claude Haiku 4.5. The agent was fed my resume and supplementary professional context, then given strict guidelines defining exactly what it can and can't discuss — keeping responses accurate and on-topic.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3">
+                {[
+                  { label: 'Orchestration', value: 'n8n AI agent' },
+                  { label: 'Model', value: 'Claude Haiku 4.5' },
+                  { label: 'Context', value: 'Resume + professional background' },
+                  { label: 'Guardrails', value: 'Strict topic & behavior guidelines' },
+                ].map(({ label, value }) => (
+                  <div key={label} className="flex items-start gap-3">
+                    <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-gray-400 w-28 flex-shrink-0 pt-0.5">{label}</span>
+                    <span className="text-sm text-gray-700 font-medium">{value}</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </motion.div>
