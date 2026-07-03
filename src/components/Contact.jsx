@@ -1,32 +1,8 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import emailjs from '@emailjs/browser'
 import { fadeUp, stagger, underlineDraw } from '../lib/motion.js'
 
-const EMAILJS_SERVICE  = 'service_4vo0w8i'
-const EMAILJS_TEMPLATE = 'template_wi872o8'
-const EMAILJS_KEY      = 'uoM9ushoeBXEVbAaS'
-
-const DISCORD_WEBHOOK  = '
-
-function sendDiscord(name, email, message) {
-  return fetch(DISCORD_WEBHOOK, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      embeds: [{
-        title: '📬 New Portfolio Contact',
-        color: 0x16a34a,
-        fields: [
-          { name: 'Name',    value: name,    inline: true },
-          { name: 'Email',   value: email,   inline: true },
-          { name: 'Message', value: message, inline: false },
-        ],
-        timestamp: new Date().toISOString(),
-      }],
-    }),
-  }).catch(() => {})
-}
+const DISCORD_WEBHOOK = '
 
 export default function Contact() {
   const ref = useRef(null)
@@ -42,10 +18,22 @@ export default function Contact() {
     const email   = data.get('email')   ?? ''
     const message = data.get('msg')     ?? ''
     try {
-      await Promise.all([
-        emailjs.sendForm(EMAILJS_SERVICE, EMAILJS_TEMPLATE, formRef.current, EMAILJS_KEY),
-        sendDiscord(name, email, message),
-      ])
+      await fetch(DISCORD_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          embeds: [{
+            title: '📬 New Portfolio Contact',
+            color: 0x16a34a,
+            fields: [
+              { name: 'Name',    value: name,    inline: true },
+              { name: 'Email',   value: email,   inline: true },
+              { name: 'Message', value: message, inline: false },
+            ],
+            timestamp: new Date().toISOString(),
+          }],
+        }),
+      })
       setStatus('sent')
       formRef.current.reset()
     } catch {
