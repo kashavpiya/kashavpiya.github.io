@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Artifacts from './pages/Artifacts.jsx'
 import Chat from './pages/Chat.jsx'
@@ -9,6 +9,7 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/artifacts" element={<Artifacts />} />
       <Route path="/artifacts/chat" element={<Chat />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
 }
