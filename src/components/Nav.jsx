@@ -48,9 +48,9 @@ export default function Nav() {
       showBg ? 'bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm' : 'bg-transparent'
     }`}>
       <div className="max-w-5xl mx-auto px-8 py-5 flex justify-between items-center">
-        <a href="/" className="font-extrabold text-lg tracking-tight text-gray-900 hover:text-green-600 transition-colors">
+        <Link to="/" className="font-extrabold text-lg tracking-tight text-gray-900 hover:text-green-600 transition-colors">
           KP
-        </a>
+        </Link>
         <div className="flex gap-8">
           {hashLinks.map(({ label, href }) => (
             <a
