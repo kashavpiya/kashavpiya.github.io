@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const WEBHOOK_URL =
@@ -16,14 +16,13 @@ export default function Chat() {
 
   const sessionId = useRef(crypto.randomUUID())
   const bottomRef = useRef(null)
-  const textareaRef = useRef(null)
 
   // Auto-scroll to bottom whenever messages change
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
-  const sendMessage = useCallback(async () => {
+  const sendMessage = async () => {
     const text = input.trim()
     if (!text || loading) return
 
@@ -48,13 +47,31 @@ export default function Chat() {
         }),
       })
 
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const reader = res.body.getReader()
       const decoder = new TextDecoder()
       let buffer = ''
 
       while (true) {
         const { done, value } = await reader.read()
-        if (done) break
+        if (done) {
+          if (buffer.trim()) {
+            try {
+              const event = JSON.parse(buffer)
+              if (event.type === 'item' && event.content) {
+                setMessages(prev => {
+                  const updated = [...prev]
+                  updated[updated.length - 1] = {
+                    ...updated[updated.length - 1],
+                    content: updated[updated.length - 1].content + event.content,
+                  }
+                  return updated
+                })
+              }
+            } catch {}
+          }
+          break
+        }
         buffer += decoder.decode(value, { stream: true })
         const lines = buffer.split('\n')
         buffer = lines.pop()
@@ -87,7 +104,7 @@ export default function Chat() {
     } finally {
       setLoading(false)
     }
-  }, [input, loading])
+  }
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -95,10 +112,6 @@ export default function Chat() {
       sendMessage()
     }
   }
-
-  // Determine if last message is the streaming placeholder
-  const lastMsg = messages[messages.length - 1]
-  const isStreaming = loading && lastMsg?.role === 'assistant' && lastMsg?.content === ''
 
   return (
     <div className="font-sans text-gray-900 bg-white h-screen flex flex-col">
@@ -164,7 +177,6 @@ export default function Chat() {
         <div className="max-w-2xl mx-auto">
           <div className="flex gap-2 items-end">
             <textarea
-              ref={textareaRef}
               rows={1}
               value={input}
               onChange={e => setInput(e.target.value)}
