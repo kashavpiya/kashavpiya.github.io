@@ -9,8 +9,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/assets/index-C3K1noaQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-l0BmrNHQ.css">
+    <!-- GitHub Pages SPA redirect: restores path encoded by 404.html -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          window.history.replaceState(
+            null, null,
+            l.pathname.slice(0, -1) + decoded[0] +
+            (decoded.slice(1).join('&') ? '?' + decoded.slice(1).join('&') : '') +
+            l.hash
+          );
+        }
+      }(window.location));
+    </script>
+    <script type="module" crossorigin src="/assets/index-ByKqVr_h.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CfWfAS50.css">
   </head>
   <body>
     <div id="root"></div>
