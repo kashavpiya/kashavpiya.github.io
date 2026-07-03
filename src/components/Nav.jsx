@@ -68,10 +68,9 @@ export default function Nav() {
           <Link
             to="/artifacts"
             className={`text-sm font-medium tracking-wide transition-colors ${
-              isArtifactsActive
-                ? 'text-green-600'
-                : 'text-gray-500 hover:text-gray-900'
+              isArtifactsActive ? 'text-green-600' : 'text-gray-500 hover:text-gray-900'
             }`}
+            style={{ animation: 'glow-pulse 2s ease-in-out infinite' }}
           >
             Artifacts
           </Link>
