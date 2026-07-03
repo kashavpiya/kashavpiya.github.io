@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
-const links = [
+const hashLinks = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Research', href: '#research' },
@@ -13,9 +14,12 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const sectionEls = useRef([])
   const rafId = useRef(null)
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   useEffect(() => {
-    sectionEls.current = links.map(l => document.querySelector(l.href))
+    if (!isHome) return
+    sectionEls.current = hashLinks.map(l => document.querySelector(l.href))
 
     const onScroll = () => {
       cancelAnimationFrame(rafId.current)
@@ -33,21 +37,25 @@ export default function Nav() {
       window.removeEventListener('scroll', onScroll)
       cancelAnimationFrame(rafId.current)
     }
-  }, [])
+  }, [isHome])
+
+  // Non-home pages always show nav background (no hero underneath)
+  const showBg = !isHome || scrolled
+  const isArtifactsActive = location.pathname.startsWith('/artifacts')
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm' : 'bg-transparent'
+      showBg ? 'bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm' : 'bg-transparent'
     }`}>
       <div className="max-w-5xl mx-auto px-8 py-5 flex justify-between items-center">
-        <a href="#" className="font-extrabold text-lg tracking-tight text-gray-900 hover:text-green-600 transition-colors">
+        <a href="/" className="font-extrabold text-lg tracking-tight text-gray-900 hover:text-green-600 transition-colors">
           KP
         </a>
         <div className="flex gap-8">
-          {links.map(({ label, href }) => (
+          {hashLinks.map(({ label, href }) => (
             <a
               key={href}
-              href={href}
+              href={isHome ? href : `/${href}`}
               className={`text-sm font-medium tracking-wide transition-colors ${
                 active === href
                   ? 'text-green-600'
@@ -57,6 +65,16 @@ export default function Nav() {
               {label}
             </a>
           ))}
+          <Link
+            to="/artifacts"
+            className={`text-sm font-medium tracking-wide transition-colors ${
+              isArtifactsActive
+                ? 'text-green-600'
+                : 'text-gray-500 hover:text-gray-900'
+            }`}
+          >
+            Artifacts
+          </Link>
         </div>
       </div>
     </nav>
