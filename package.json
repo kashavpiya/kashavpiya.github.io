@@ -12,8 +12,11 @@
   "dependencies": {
     "@emailjs/browser": "^4.0.0",
     "framer-motion": "^11.0.0",
+    "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
+    "react-leaflet-cluster": "^2.1.0",
     "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
