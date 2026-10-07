@@ -35,13 +35,7 @@ export default function Writing() {
         <motion.p variants={fadeUp} className="text-xs font-bold tracking-[0.2em] uppercase text-green-600 mb-4">
           Writing
         </motion.p>
-        <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight mb-3">
-          Selected pieces
-        </motion.h2>
-        <motion.div variants={underlineDraw} style={{ originX: 0 }} className="h-0.5 w-16 bg-green-600 mb-4" />
-        <motion.p variants={fadeUp} className="text-gray-500 text-base mb-14 max-w-lg">
-          Explainers, newsletter issues, and commentary on AI in the real world.
-        </motion.p>
+        <motion.div variants={underlineDraw} style={{ originX: 0 }} className="h-0.5 w-16 bg-green-600 mb-14" />
 
         <motion.div variants={stagger} className="flex flex-col gap-4">
           {pieces.map(({ tag, title, desc, href }) => (
