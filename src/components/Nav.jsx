@@ -6,6 +6,7 @@ const hashLinks = [
   { label: 'Skills', href: '#skills' },
   { label: 'Research', href: '#research' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Writing', href: '#writing' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -45,7 +46,6 @@ export default function Nav() {
   }, [isHome])
 
   const showBg = !isHome || scrolled || menuOpen
-  const isArtifactsActive = location.pathname.startsWith('/artifacts')
 
   const handleNavLink = (e, href) => {
     setMenuOpen(false)
@@ -80,15 +80,6 @@ export default function Nav() {
               {label}
             </a>
           ))}
-          <Link
-            to="/artifacts"
-            className={`text-sm font-medium tracking-wide transition-colors ${
-              isArtifactsActive ? 'text-green-600' : 'text-gray-500 hover:text-gray-900'
-            }`}
-            style={{ animation: 'glow-pulse 2s ease-in-out infinite' }}
-          >
-            Artifacts
-          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -120,16 +111,6 @@ export default function Nav() {
               {label}
             </a>
           ))}
-          <Link
-            to="/artifacts"
-            onClick={() => setMenuOpen(false)}
-            className={`py-3 text-base font-medium transition-colors ${
-              isArtifactsActive ? 'text-green-600' : 'text-gray-700'
-            }`}
-            style={{ animation: 'glow-pulse 2s ease-in-out infinite' }}
-          >
-            Artifacts
-          </Link>
         </div>
       </div>
     </nav>

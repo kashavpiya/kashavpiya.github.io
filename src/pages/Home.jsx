@@ -4,6 +4,7 @@ import About from '../components/About.jsx'
 import Skills from '../components/Skills.jsx'
 import Research from '../components/Research.jsx'
 import Projects from '../components/Projects.jsx'
+import Writing from '../components/Writing.jsx'
 import Contact from '../components/Contact.jsx'
 import Footer from '../components/Footer.jsx'
 
@@ -26,6 +27,8 @@ export default function Home() {
       <Research />
       <Divider />
       <Projects />
+      <Divider />
+      <Writing />
       <Divider />
       <Contact />
       <Footer />

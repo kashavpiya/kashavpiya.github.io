@@ -1,8 +1,27 @@
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import { fadeUp, stagger, cardItem, underlineDraw } from '../lib/motion.js'
 
 const projects = [
+  {
+    emoji: '🤖',
+    name: 'kas-4b',
+    desc: 'Fine-tuned 4B decision model submitted to Decision Index 0.3. Ranks #1 on CRUXEval+, #2 on Habermas Machine+, and #3 on CLadder+ out of 112 global entries — beating models up to 28B.',
+    links: [
+      { label: 'Model ↗', href: 'https://huggingface.co/kpiya/kas-4b', primary: true },
+      { label: 'GitHub', href: 'https://github.com/kashavpiya/kas-4b', primary: false },
+      { label: 'Results', href: '/artifacts/kas-4b', primary: false, internal: true },
+    ],
+  },
+  {
+    emoji: '💬',
+    name: 'Ask me anything',
+    desc: 'AI agent trained on my professional background. Built with n8n, Claude Haiku 4.5, and LangChain — streams responses in real time via a custom React frontend.',
+    links: [
+      { label: 'Try it ↗', href: '/artifacts/chat', primary: true, internal: true },
+    ],
+  },
   {
     emoji: '🏙️',
     name: 'City of Goose Lake',
@@ -57,20 +76,34 @@ export default function Projects() {
                 <h3 className="font-bold text-base text-gray-900 mb-2">{name}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed mb-5">{desc}</p>
                 <div className="flex gap-3">
-                  {links.map(({ label, href, primary }) => (
-                    <a
-                      key={href}
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`text-xs font-semibold px-4 py-2 rounded-md border transition-colors ${
-                        primary
-                          ? 'bg-gray-900 text-white border-gray-900 hover:bg-green-600 hover:border-green-600'
-                          : 'text-gray-700 border-gray-200 hover:border-green-600 hover:text-green-600'
-                      }`}
-                    >
-                      {label}
-                    </a>
+                  {links.map(({ label, href, primary, internal }) => (
+                    internal ? (
+                      <Link
+                        key={href}
+                        to={href}
+                        className={`text-xs font-semibold px-4 py-2 rounded-md border transition-colors ${
+                          primary
+                            ? 'bg-gray-900 text-white border-gray-900 hover:bg-green-600 hover:border-green-600'
+                            : 'text-gray-700 border-gray-200 hover:border-green-600 hover:text-green-600'
+                        }`}
+                      >
+                        {label}
+                      </Link>
+                    ) : (
+                      <a
+                        key={href}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`text-xs font-semibold px-4 py-2 rounded-md border transition-colors ${
+                          primary
+                            ? 'bg-gray-900 text-white border-gray-900 hover:bg-green-600 hover:border-green-600'
+                            : 'text-gray-700 border-gray-200 hover:border-green-600 hover:text-green-600'
+                        }`}
+                      >
+                        {label}
+                      </a>
+                    )
                   ))}
                 </div>
               </div>
