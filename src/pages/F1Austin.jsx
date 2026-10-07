@@ -1,5 +1,4 @@
-import { useState, useMemo } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useMemo, useEffect } from 'react'
 import { f1Events } from '../data/f1Events'
 import F1Map from '../components/F1Map'
 import F1EventCard from '../components/F1EventCard'
@@ -40,6 +39,12 @@ export default function F1Austin() {
   const [activeFilters, setActiveFilters] = useState(new Set())
   const [selectedEventId, setSelectedEventId] = useState(null)
 
+  useEffect(() => {
+    const prev = document.title
+    document.title = 'F1 Austin 2026 — Race Week Events'
+    return () => { document.title = prev }
+  }, [])
+
   const filteredEvents = useMemo(() => {
     return f1Events.filter(event => {
       const dayMatch = selectedDay === 'ALL' || event.date === selectedDay
@@ -61,9 +66,6 @@ export default function F1Austin() {
     <div className="h-screen flex flex-col bg-gray-50 text-gray-900 overflow-hidden">
       {/* Header */}
       <header className="flex items-center gap-4 px-4 py-3 bg-white border-b border-gray-200 shrink-0 shadow-sm">
-        <Link to="/" className="text-gray-400 hover:text-gray-700 transition-colors text-sm">
-          ← Back
-        </Link>
         <div>
           <h1 className="text-base font-bold leading-tight text-gray-900">F1 Austin 2026 🏎️</h1>
           <p className="text-xs text-gray-400">Race Week Events · Oct 18–27</p>
