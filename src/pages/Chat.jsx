@@ -116,7 +116,7 @@ export default function Chat() {
   return (
     <div className="font-sans text-gray-900 bg-white h-screen flex flex-col">
       {/* Top bar */}
-      <div className="h-16 flex-shrink-0 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm flex items-center px-8">
+      <div className="h-16 flex-shrink-0 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm flex items-center px-4 sm:px-8">
         <Link
           to="/artifacts"
           className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"

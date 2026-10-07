@@ -12,7 +12,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="about" ref={ref} className="max-w-5xl mx-auto px-8 py-28">
+    <section id="about" ref={ref} className="max-w-5xl mx-auto px-6 sm:px-8 py-16 sm:py-24 lg:py-28">
       <motion.div variants={stagger} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
 
         {/* Label */}
@@ -20,20 +20,20 @@ export default function About() {
           About
         </motion.p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left: title + stats */}
           <div>
-            <motion.h2 variants={fadeUp} className="text-5xl font-extrabold tracking-[-0.03em] leading-tight mb-3">
-              Building the<br />future with AI
+            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight mb-3">
+              AI that serves<br />people first
             </motion.h2>
 
             {/* Green underline */}
-            <motion.div variants={underlineDraw} style={{ originX: 0 }} className="h-0.5 w-16 bg-green-600 mb-12" />
+            <motion.div variants={underlineDraw} style={{ originX: 0 }} className="h-0.5 w-16 bg-green-600 mb-10 sm:mb-12" />
 
-            <div className="flex gap-16">
+            <div className="flex gap-10 sm:gap-16">
               {stats.map(({ num, label }) => (
                 <motion.div key={num} variants={fadeUp} className="border-l-2 border-green-600 pl-5">
-                  <div className="text-4xl font-extrabold tracking-[-0.03em] text-gray-900">{num}</div>
+                  <div className="text-3xl sm:text-4xl font-extrabold tracking-[-0.03em] text-gray-900">{num}</div>
                   <div className="text-sm text-gray-500 mt-1 whitespace-pre-line leading-snug">{label}</div>
                 </motion.div>
               ))}
@@ -43,16 +43,19 @@ export default function About() {
           {/* Right: bio */}
           <motion.div variants={fadeUp} className="text-gray-500 text-base leading-relaxed space-y-4 pt-2">
             <p>
-              I'm an AI Associate at Walker Advertising, where I integrate AI and automation into
-              day-to-day workflows using tools like n8n, Claude, and Supabase.
+              I'm an AI Associate building automation and AI systems that augment how people work —
+              not replace them. Tools like n8n, Claude, and Supabase are means to an end: less
+              friction, more focus on what humans do best.
             </p>
             <p>
-              I've published research as first author in both IEEE and arXiv, and I build practical
-              AI systems — RAG pipelines, intelligent agents, and workflow automations that actually ship.
+              I've published research as first author in IEEE and arXiv — including work on
+              mitigating bias in voice AI and responsible IoT design in healthcare. I bring that
+              same grounding to the systems I build: RAG pipelines, intelligent agents, and
+              workflow automations that are explainable and purposeful.
             </p>
             <p>
-              I care about the intersection of research and real-world application: turning
-              cutting-edge ideas into tools people use every day.
+              I believe AI is most valuable when it's built with intention — solving real problems
+              transparently, with humans staying in the loop.
             </p>
             <a
               href="#contact"

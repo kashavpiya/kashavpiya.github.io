@@ -4,6 +4,25 @@ import { fadeUp, stagger, cardItem, underlineDraw } from '../lib/motion.js'
 
 const papers = [
   {
+    venue: 'arXiv · 2026',
+    title: 'kas-4b: A Balanced 4B Decision Model via High-Rank LoRA Fine-Tuning on Qwen3-4B',
+    abstract:
+      'Fine-tunes Qwen3-4B with LoRA rank 64 and a custom logit-scoring engine for the Decision Index benchmark. Ranks #1 on CRUXEval+, #2 on Habermas Machine+ and BPoMP+, and #3 on CLadder+ out of 112 entries — outperforming models up to 28B parameters on four reasoning sub-tasks.',
+    authors: 'Kashav Piya',
+    href: 'https://huggingface.co/kpiya/kas-4b',
+    peerReviewed: false,
+    badge: 'Preprint',
+  },
+  {
+    venue: 'SSRN · 2026',
+    title: 'Overthinking Hurts Most When Humans Disagree: Reasoning Effort and Annotator Agreement in Subjective LLM Classification',
+    abstract:
+      'Evaluates whether the overthinking pattern in LLMs with controllable reasoning effort holds for subjective classification tasks where human annotators disagree. Studies o3-mini, GPT-5.4, and Claude Sonnet 4.6 on the CLARITY political interview dataset across low, medium, and high reasoning effort, split by annotator agreement.',
+    authors: 'Kashav Piya',
+    href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7331298',
+    peerReviewed: false,
+  },
+  {
     venue: 'SSRN · 2026',
     title: "From Deep Learning to Real-World Surveillance: A Case Study of Flock Safety's Automated License Plate Recognition Network",
     abstract:
@@ -66,11 +85,11 @@ export default function Research() {
         </motion.h2>
         <motion.div variants={underlineDraw} style={{ originX: 0 }} className="h-0.5 w-16 bg-green-600 mb-4" />
         <motion.p variants={fadeUp} className="text-gray-500 text-base mb-14 max-w-lg">
-          Peer-reviewed publications spanning AI equity, IoT, VR, and network infrastructure.
+          Publications and preprints spanning AI models, LLM evaluation, AI equity, IoT, and network infrastructure.
         </motion.p>
 
         <motion.div variants={stagger} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {papers.map(({ venue, title, abstract, authors, href, peerReviewed }) => (
+          {papers.map(({ venue, title, abstract, authors, href, peerReviewed, badge }) => (
             <motion.a
               key={href}
               href={href}
@@ -94,6 +113,11 @@ export default function Research() {
                 {peerReviewed && (
                   <span className="inline-block text-[10px] font-bold tracking-[0.15em] uppercase text-blue-600 bg-blue-50 px-2.5 py-1 rounded">
                     Peer-Reviewed
+                  </span>
+                )}
+                {badge && (
+                  <span className="inline-block text-[10px] font-bold tracking-[0.15em] uppercase text-orange-600 bg-orange-50 px-2.5 py-1 rounded">
+                    {badge}
                   </span>
                 )}
               </div>

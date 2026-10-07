@@ -26,18 +26,18 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" ref={ref} className="max-w-5xl mx-auto px-8 py-28">
+    <section id="contact" ref={ref} className="max-w-5xl mx-auto px-6 sm:px-8 py-16 sm:py-24 lg:py-28">
       <motion.div variants={stagger} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
 
         <motion.p variants={fadeUp} className="text-xs font-bold tracking-[0.2em] uppercase text-green-600 mb-4">
           Contact
         </motion.p>
-        <motion.h2 variants={fadeUp} className="text-5xl font-extrabold tracking-[-0.03em] leading-tight mb-3">
+        <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight mb-3">
           Let's talk
         </motion.h2>
-        <motion.div variants={underlineDraw} style={{ originX: 0 }} className="h-0.5 w-16 bg-green-600 mb-16" />
+        <motion.div variants={underlineDraw} style={{ originX: 0 }} className="h-0.5 w-16 bg-green-600 mb-12 sm:mb-16" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left: info */}
           <motion.div variants={fadeUp} className="flex flex-col gap-8">
             <p className="text-gray-500 text-base leading-relaxed max-w-sm">
@@ -55,7 +55,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400 mb-1">Currently</p>
-                <p className="text-sm font-semibold text-gray-900">AI Associate · Walker Advertising</p>
+                <p className="text-sm font-semibold text-gray-900">AI Associate</p>
               </div>
               <div>
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400 mb-1">LinkedIn</p>

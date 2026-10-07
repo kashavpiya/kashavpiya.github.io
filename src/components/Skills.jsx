@@ -11,12 +11,12 @@ const skills = [
   {
     icon: '🤖',
     name: 'AI Agents',
-    desc: 'Designing and deploying autonomous agents with tool use, memory, and multi-step reasoning.',
+    desc: 'Designing agents with clear boundaries, human oversight, and purposeful tool use.',
   },
   {
     icon: '📚',
     name: 'RAG Systems',
-    desc: 'Retrieval-Augmented Generation pipelines for grounded, accurate AI responses over private data.',
+    desc: 'Retrieval-Augmented Generation pipelines — grounding AI responses in real data instead of hallucination.',
   },
   {
     icon: '🗄️',
@@ -40,18 +40,18 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="skills" ref={ref} className="max-w-5xl mx-auto px-8 py-28">
+    <section id="skills" ref={ref} className="max-w-5xl mx-auto px-6 sm:px-8 py-16 sm:py-24 lg:py-28">
       <motion.div variants={stagger} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
 
         <motion.p variants={fadeUp} className="text-xs font-bold tracking-[0.2em] uppercase text-green-600 mb-4">
           Stack
         </motion.p>
-        <motion.h2 variants={fadeUp} className="text-5xl font-extrabold tracking-[-0.03em] leading-tight mb-3">
+        <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.03em] leading-tight mb-3">
           What I build with
         </motion.h2>
         <motion.div variants={underlineDraw} style={{ originX: 0 }} className="h-0.5 w-16 bg-green-600 mb-4" />
         <motion.p variants={fadeUp} className="text-gray-500 text-base mb-14 max-w-lg">
-          Day-to-day tools at the intersection of AI engineering and automation.
+          Tools for building AI that's grounded and useful — not just impressive.
         </motion.p>
 
         <motion.div
