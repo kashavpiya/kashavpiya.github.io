@@ -69,6 +69,20 @@ export default function Artifacts() {
 
           <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
 
+            <motion.article variants={cardItem} whileHover={{ y: -4 }} className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-[0_16px_48px_rgba(0,0,0,0.08)] transition-shadow">
+              <img src="/nexora-campaign.jpg" alt="On-call engineer reviewing a pipeline recovery runbook" className="h-40 w-full object-cover" />
+              <div className="p-6">
+                <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-green-700 mb-2">Artifact 7 · Graduate coursework</p>
+                <h3 className="font-bold text-base text-gray-900 mb-2">Nexora Engineering Assistant</h3>
+                <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                  A launch story, campaign visual, and pilot plan for a fictional AI assistant that helps engineers find current runbooks.
+                </p>
+                <Link to="/artifacts/nexora-story" className="inline-block text-xs font-semibold px-4 py-2 rounded-md bg-gray-900 text-white hover:bg-green-600 transition-colors">
+                  Read case study →
+                </Link>
+              </div>
+            </motion.article>
+
             {/* Artifact 1 — Ask me anything */}
             <motion.div
               variants={cardItem}

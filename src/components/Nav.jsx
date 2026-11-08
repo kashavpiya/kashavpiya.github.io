@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 const hashLinks = [
   { label: 'About', href: '#about' },
@@ -80,6 +80,9 @@ export default function Nav() {
               {label}
             </a>
           ))}
+          <NavLink to="/artifacts" className={({ isActive }) => `text-sm font-medium tracking-wide transition-colors ${isActive ? 'text-green-600' : 'text-gray-500 hover:text-gray-900'}`}>
+            Artifacts
+          </NavLink>
         </div>
 
         {/* Mobile hamburger */}
@@ -111,6 +114,9 @@ export default function Nav() {
               {label}
             </a>
           ))}
+          <NavLink to="/artifacts" onClick={() => setMenuOpen(false)} className={({ isActive }) => `py-3 text-base font-medium transition-colors ${isActive ? 'text-green-600' : 'text-gray-700'}`}>
+            Artifacts
+          </NavLink>
         </div>
       </div>
     </nav>
